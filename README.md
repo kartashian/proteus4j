@@ -15,7 +15,7 @@ public class Square implements Figure {
 }
 ```
 
-Recommended use enum for child class naming for avoiding syntax errors
+Recommended to use enum for child class naming for avoiding syntax errors
 
 ```java
 public enum Shape {

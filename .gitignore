@@ -22,13 +22,5 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-.gitignore
-COPYING.txt
-README.md
-build.gradle
 gradle/
-gradlew
-gradlew.bat
 out/
-settings.gradle
-src/
