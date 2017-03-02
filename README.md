@@ -1,8 +1,8 @@
 ##Software design patterns Java implementation library
 
 ##Implemented pattern list:
-- Factory Method
-- Builder
+- [Factory Method](#factory-method-pattern)
+- [Builder](#builder-pattern)
 
 ##Usage
 ###Factory Method Pattern
@@ -53,7 +53,7 @@ public class FigureService {
 }
 ```
 ###Builder Pattern
-```Builder``` implementation can help create an instance of any object without the need to write builder boilerplate code\
+```Builder``` implementation can help create an instance of any object without the need to write builder boilerplate code.
 Just specify class with setters, like this:
 
 ```java
