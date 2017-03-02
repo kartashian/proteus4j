@@ -1,10 +1,10 @@
-package org.proteus4j.test;
+package org.proteus4j.factory;
 
 import org.junit.Test;
-import org.proteus4j.base.Factory;
-import org.proteus4j.test.model.Diamond;
-import org.proteus4j.test.model.Figure;
-import org.proteus4j.test.model.Shape;
+import org.proteus4j.factory.base.Factory;
+import org.proteus4j.factory.model.Diamond;
+import org.proteus4j.factory.model.Figure;
+import org.proteus4j.factory.model.Shape;
 
 import java.util.NoSuchElementException;
 import java.util.UUID;

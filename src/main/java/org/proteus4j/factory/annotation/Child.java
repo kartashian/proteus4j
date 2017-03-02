@@ -1,10 +1,10 @@
-package org.proteus4j.annotation;
+package org.proteus4j.factory.annotation;
 
 import java.lang.annotation.*;
 
 /**
  * Indicates that a type is subclass (extension or implementation) of some class marked as {@link Parent}.
- * Will be used by {@link org.proteus4j.base.Factory} for creating new object by its parameters.
+ * Will be used by {@link org.proteus4j.factory.base.Factory} for creating new object by its parameters.
  * Child type couldn't be abstract.
  *
  * <pre class="code">
@@ -25,7 +25,7 @@ import java.lang.annotation.*;
  *
  * @author Avetik Kartashian
  * @see Parent
- * @see org.proteus4j.base.Factory
+ * @see org.proteus4j.factory.base.Factory
  */
 @Documented
 @Target({ElementType.TYPE})
@@ -33,7 +33,7 @@ import java.lang.annotation.*;
 public @interface Child {
 
     /**
-     * Child type name which use for creating its instances from {@link org.proteus4j.base.Factory}
+     * Child type name which use for creating its instances from {@link org.proteus4j.factory.base.Factory}
      * Default value is type class name {@link Class#getName()}
      */
     String name() default "";

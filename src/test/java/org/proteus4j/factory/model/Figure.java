@@ -1,6 +1,6 @@
-package org.proteus4j.test.model;
+package org.proteus4j.factory.model;
 
-import org.proteus4j.annotation.Parent;
+import org.proteus4j.factory.annotation.Parent;
 
 @Parent
 public abstract class Figure {

@@ -1,4 +1,4 @@
-package org.proteus4j.base;
+package org.proteus4j.factory.base;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

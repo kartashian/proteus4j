@@ -1,4 +1,4 @@
-package org.proteus4j.base;
+package org.proteus4j.factory.base;
 
 import java.util.NoSuchElementException;
 
@@ -18,8 +18,8 @@ import java.util.NoSuchElementException;
  * components (no more do individual factory for every hierarchy type).
  *
  * @author Avetik Kartashian
- * @see org.proteus4j.annotation.Parent
- * @see org.proteus4j.annotation.Child
+ * @see org.proteus4j.factory.annotation.Parent
+ * @see org.proteus4j.factory.annotation.Child
  */
 public class Factory {
 

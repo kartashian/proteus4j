@@ -1,4 +1,4 @@
-package org.proteus4j.annotation;
+package org.proteus4j.factory.annotation;
 
 import java.lang.annotation.*;
 
@@ -8,7 +8,7 @@ import java.lang.annotation.*;
  * Type could be an interface, abstract class or regular class.
  * <p>
  * Parent class will be used for collecting child types info (implements or extend parent and market with {@link Child})
- * and for retrieving child instances from {@link org.proteus4j.base.Factory}
+ * and for retrieving child instances from {@link org.proteus4j.factory.base.Factory}
  * <pre class="code">
  * &#064;Parent
  * public interface Figure {
@@ -27,7 +27,7 @@ import java.lang.annotation.*;
  *
  * @author Avetik Kartashian
  * @see Child
- * @see org.proteus4j.base.Factory
+ * @see org.proteus4j.factory.base.Factory
  */
 @Documented
 @Target({ElementType.TYPE})

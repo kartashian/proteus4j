@@ -1,6 +1,6 @@
-package org.proteus4j.base;
+package org.proteus4j.factory.base;
 
-import org.proteus4j.annotation.Parent;
+import org.proteus4j.factory.annotation.Parent;
 import org.reflections.Reflections;
 import org.reflections.scanners.SubTypesScanner;
 import org.reflections.scanners.TypeAnnotationsScanner;

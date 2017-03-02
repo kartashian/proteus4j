@@ -1,4 +1,4 @@
-package org.proteus4j.base;
+package org.proteus4j.factory.base;
 
 interface Hierarchy {
 

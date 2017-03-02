@@ -1,4 +1,4 @@
-package org.proteus4j.test.model;
+package org.proteus4j.factory.model;
 
 public enum Shape {
     SQUARE(Value.SQUARE),

@@ -1,6 +1,6 @@
-package org.proteus4j.base;
+package org.proteus4j.factory.base;
 
-import org.proteus4j.annotation.Child;
+import org.proteus4j.factory.annotation.Child;
 
 import java.util.*;
 
