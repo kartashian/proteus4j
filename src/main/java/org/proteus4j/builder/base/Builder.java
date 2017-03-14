@@ -8,11 +8,11 @@ import java.util.function.Supplier;
 
 public class Builder<T> {
 
-    private final Supplier<T> instance;
+    private final Supplier<T> instantiator;
     private final List<Consumer<T>> modifiers;
 
-    private Builder(Supplier<T> instance) {
-        this.instance = instance;
+    private Builder(Supplier<T> instantiator) {
+        this.instantiator = instantiator;
         this.modifiers = new ArrayList<>();
     }
 
@@ -27,13 +27,13 @@ public class Builder<T> {
     }
 
     public T build() {
-        T value = instance.get();
-        return modify(value);
+        T instance = instantiator.get();
+        return modify(instance);
     }
 
-    private T modify(T value) {
-        modifiers.forEach(modifier -> modifier.accept(value));
+    private T modify(T instance) {
+        modifiers.forEach(modifier -> modifier.accept(instance));
         modifiers.clear();
-        return value;
+        return instance;
     }
 }
