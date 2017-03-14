@@ -73,7 +73,7 @@ class SimpleChild<T> implements IChild<T> {
     public String toString() {
         return "SimpleChild{" +
                 "type=" + type +
-                ", name='" + name + '\'' +
+                ", value='" + name + '\'' +
                 '}';
     }
 }

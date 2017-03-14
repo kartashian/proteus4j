@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
  * the exact class of the object that will be created.
  * <p>
  * <p>This class is implemented by handler that hold a number of parent-children definitions(hierarchies),
- * each children identified by a parent type and String name. Depending on the child configuration,
+ * each children identified by a parent type and String value. Depending on the child configuration,
  * the factory will return either an independent instance of an object or a single shared instance .
  * <p>
  * <p>The point of this approach is that the Factory is a central registry
@@ -29,14 +29,14 @@ public class Factory {
     }
 
     /**
-     * Return an instance by parent type and name, which may be shared or independent,
+     * Return an instance by parent type and value, which may be shared or independent,
      * of the specified child.
      *
      * @param type the type the child must be match (parent type)
-     * @param name the name of the class to created
+     * @param name the value of the class to created
      * @return an instance of the child
      * @throws UnsupportedOperationException if parent class not marked as parent or empty constructor not found
-     * @throws NoSuchElementException        if there is no child of type with specified name
+     * @throws NoSuchElementException        if there is no child of type with specified value
      */
     public static <T> T get(Class<T> type, String name) {
         return handler.getSubInstance(type, name);
@@ -48,11 +48,11 @@ public class Factory {
      * the same as {@link #get(Class, String)}
      *
      * @param type      the type the child must be match (parent type)
-     * @param name      the name of the class to created
+     * @param name      the value of the class to created
      * @param arguments target object constructor arguments
      * @return an instance of the child
      * @throws UnsupportedOperationException if parent class not marked as parent or suited constructor not found
-     * @throws NoSuchElementException        if there is no child of type with specified name
+     * @throws NoSuchElementException        if there is no child of type with specified value
      */
     public static <T> T get(Class<T> type, String name, Object... arguments) {
         return handler.getSubInstance(type, name, arguments);

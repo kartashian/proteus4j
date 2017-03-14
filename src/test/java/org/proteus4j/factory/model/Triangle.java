@@ -2,7 +2,7 @@ package org.proteus4j.factory.model;
 
 import org.proteus4j.factory.annotation.Child;
 
-@Child(name = Shape.Value.TRIANGLE)
+@Child(Shape.Value.TRIANGLE)
 public class Triangle extends Figure {
 
     @Override

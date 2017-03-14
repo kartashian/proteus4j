@@ -71,4 +71,16 @@ public class FactoryTest {
         Figure figure = Factory.get(Figure.class, Diamond.class.getName());
         assertNotNull(figure);
     }
+
+    @Test
+    public void configurationTest() {
+        Number number = Factory.get(Number.class, Integer.class.getName());
+        assertNotNull(number);
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void configurationFailTest() {
+        Number number = Factory.get(Number.class, NAME);
+        assertNotNull(number);
+    }
 }

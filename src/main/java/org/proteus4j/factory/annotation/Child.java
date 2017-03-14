@@ -12,13 +12,13 @@ import java.lang.annotation.*;
  * public interface Figure {
  * }
  *
- * &#064;Child(name = "square")
+ * &#064;Child(value = "square")
  * public class Square implements Figure {
  * }
  *
  * public class Service {
- *    public Figure getFigure(String name) {
- *       return Factory.get(Figure.class, name);
+ *    public Figure getFigure(String value) {
+ *       return Factory.get(Figure.class, value);
  *    }
  * }
  * </pre>
@@ -28,15 +28,15 @@ import java.lang.annotation.*;
  * @see org.proteus4j.factory.base.Factory
  */
 @Documented
-@Target({ElementType.TYPE})
+@Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Child {
 
     /**
-     * Child type name which use for creating its instances from {@link org.proteus4j.factory.base.Factory}
-     * Default value is type class name {@link Class#getName()}
+     * Child type value which use for creating its instances from {@link org.proteus4j.factory.base.Factory}
+     * Default value is type class value {@link Class#getName()}
      */
-    String name() default "";
+    String value() default "";
 
     /**
      * Determine if the child should be a singleton (has only one instance)

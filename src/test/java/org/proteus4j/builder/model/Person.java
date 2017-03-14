@@ -33,7 +33,7 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "name='" + name + '\'' +
+                "value='" + name + '\'' +
                 ", age=" + age +
                 ", color='" + color + '\'' +
                 '}';

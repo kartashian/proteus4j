@@ -7,6 +7,7 @@
 ##Usage
 ###Factory Method Pattern
 Basically, to implement factory method, first marked super class with ```@Parent``` and its subclass with ```@Child```
+or declare methods under ```@ProteusConfiguration``` classx 
 
 ```java
 @Parent
@@ -14,13 +15,13 @@ public interface Figure {
     // parent super class
 }
 
-@Child(name = Shape.Value.SQUARE, singleton = true)
+@Child(value = Shape.Value.SQUARE, singleton = true)
 public class Square implements Figure {
     //child class
 }
 ```
 
-Recommended to use enum for child class naming for avoiding syntax errors
+Recommended to use enum for child class naming to avoid syntax errors
 
 ```java
 public enum Shape {

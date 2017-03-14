@@ -14,13 +14,13 @@ import java.lang.annotation.*;
  * public interface Figure {
  * }
  *
- * &#064;Child(name = "square")
+ * &#064;Child(value = "square")
  * public class Square implements Figure {
  * }
  *
  * public class Service {
- *    public Figure getFigure(String name) {
- *       return Factory.get(Figure.class, name);
+ *    public Figure getFigure(String value) {
+ *       return Factory.get(Figure.class, value);
  *    }
  * }
  * </pre>
@@ -30,7 +30,7 @@ import java.lang.annotation.*;
  * @see org.proteus4j.factory.base.Factory
  */
 @Documented
-@Target({ElementType.TYPE})
+@Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Parent {
 }
