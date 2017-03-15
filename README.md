@@ -7,7 +7,7 @@
 ##Usage
 ###Factory Method Pattern
 Basically, to implement factory method, first marked super class with ```@Parent``` and its subclass with ```@Child```
-or declare methods under ```@ProteusConfiguration``` classx 
+or declare methods under ```@ProteusConfiguration``` classes 
 
 ```java
 @Parent

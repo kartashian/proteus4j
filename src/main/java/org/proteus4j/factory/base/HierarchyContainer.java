@@ -48,24 +48,27 @@ enum HierarchyContainer {
 
     private Map<Class<?>, Hierarchy> collectFromType() {
         Set<Class<?>> parents = reflections.getTypesAnnotatedWith(Parent.class);
-        Map<Class<?>, Hierarchy> hierarchies = new HashMap<>();
-        for (Class<?> parent : parents) {
-            Set<Class<?>> children = (Set<Class<?>>) reflections.getSubTypesOf(parent);
-            Hierarchy hierarchy = new SimpleHierarchy(parent, children);
-            hierarchies.put(hierarchy.getParent(), hierarchy);
-        }
-        return hierarchies;
+        return parents.stream()
+                .map(this::typeHierarchy)
+                .collect(Collectors.toMap(Hierarchy::getParent, hierarchy -> hierarchy));
+    }
+
+    private Hierarchy typeHierarchy(Class<?> parent) {
+        Set<Class<?>> children = (Set<Class<?>>) reflections.getSubTypesOf(parent);
+        return new TypeHierarchy(parent, children);
     }
 
     private Map<Class<?>, Hierarchy> collectFromConfiguration() {
         Map<Class<?>, ConfigMethod> methods = getConfigMethods();
         Set<Class<?>> parents = getParents(methods);
         return parents.stream()
-                .map(parent -> {
-                    List<ConfigMethod> children = getChildren(parent, methods);
-                    return new SimpleHierarchy(parent, children);
-                })
+                .map(parent -> methodHierarchy(parent, methods))
                 .collect(Collectors.toMap(Hierarchy::getParent, hierarchy -> hierarchy));
+    }
+
+    private Hierarchy methodHierarchy(Class<?> parent, Map<Class<?>, ConfigMethod> methods) {
+        List<ConfigMethod> children = getChildren(parent, methods);
+        return new MethodHierarchy(parent, children);
     }
 
     private Map<Class<?>, ConfigMethod> getConfigMethods() {
@@ -88,7 +91,7 @@ enum HierarchyContainer {
         }
     }
 
-    private Set<Class<?>> getParents(Map<? extends Class<?>, ConfigMethod> methods) {
+    private Set<Class<?>> getParents(Map<Class<?>, ConfigMethod> methods) {
         return methods.values()
                 .stream()
                 .map(ConfigMethod::getMethod)
