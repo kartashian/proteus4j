@@ -28,7 +28,6 @@ public class BuilderTest {
         assertEquals(person.getAge(), AGE);
         assertEquals(person.getColor(), COLOR);
         System.out.println(person);
-
     }
 
     @Test

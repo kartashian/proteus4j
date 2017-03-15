@@ -80,7 +80,6 @@ public class FactoryTest {
 
     @Test(expected = NoSuchElementException.class)
     public void configurationFailTest() {
-        Number number = Factory.get(Number.class, NAME);
-        assertNotNull(number);
+        Factory.get(Number.class, NAME);
     }
 }
